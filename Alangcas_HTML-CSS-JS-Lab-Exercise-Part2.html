@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MY TO-DO LIST</title>
+    <style>
+        li{
+            list-style-type: none;
+            font-size: 20px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+            padding-right: 10px;
+            padding-left: 40px;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+        li:nth-child(even) {
+            background: #eee;
+        }
+        li:nth-child(odd) {
+            background: #f9f9f9;
+        }
+        </style>
+    </head>
+
+    <!-- <body>
+        <h2>To Do List</h2>
+        <ul>
+            <li>Pay bills</li>
+            <li>Read a book</li>
+            <li>Meet Anna</li>
+            <li>Wash dishes</li>
+        </ul>
+    </body> -->
+
+    <body>
+        <h2>To Do List</h2>
+        <input type="text" id="enterVal" placeholder="Enter a task...">
+        <button onclick="addListItem()">Add</button>
+
+        <ul id="list">
+            <li id="li1">Pay bills</li>
+            <li id="li2">Read a book</li>
+            <li id="li3">Meet Anna</li>
+            <li id="li4">Wash dishes</li>
+        </ul>
+
+        <script>
+            function addListItem(){
+                var li = document.createElement("li");
+                var inputValue = document.getElementById("enterVal").value;
+                var t = document.createTextNode(inputValue);
+                li.appendChild(t);
+    
+                if (inputValue === '') {
+                alert("You must write something!");
+                } else {
+                document.getElementById("list").appendChild(li);
+                }
+                document.getElementById("enterVal").value = "";
+            }
+        </script>
+    </body>
+
+</html>
